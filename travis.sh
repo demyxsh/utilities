@@ -4,7 +4,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Get versions
-DEMYX_UBUNTU_VERSION=$(docker exec -t ubuntu cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed -e 's/\r//g')
+DEMYX_UBUNTU_VERSION=$(docker exec -t ubuntu cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's/"//g' | sed -e 's/\r//g')
 
 # Replace the README.md
 [[ -f README.md ]] && rm README.md
