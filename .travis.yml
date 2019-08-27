@@ -1,0 +1,23 @@
+notifications:
+  email:
+    on_success: never
+    on_failure: always
+
+services:
+  - docker
+
+env:
+  - DEMYX_USERNAME=demyx DEMYX_REPOSITORY=utilities
+
+before_install:
+  - docker pull ubuntu
+
+script:
+  - docker build --no-cache -t demyx/"$DEMYX_REPOSITORY" .
+  - docker run -dit --rm --name ubuntu demyx/utilities top
+  - docker exec -t ubuntu cat /etc/os-release
+
+after_success:
+  - echo "$DEMYX_PASSWORD" | docker login -u "$DEMYX_USERNAME" --password-stdin
+  - docker push demyx/"$DEMYX_REPOSITORY"
+  - bash travis.sh
