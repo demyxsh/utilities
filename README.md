@@ -2,7 +2,7 @@
 [![Build Status](https://img.shields.io/travis/demyxco/utilities?style=flat)](https://travis-ci.org/demyxco/utilities)
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/utilities?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
-[![Ubuntu](https://img.shields.io/badge/ubuntu-"18.04"-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
+[![Ubuntu](https://img.shields.io/badge/ubuntu-18.04-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 
 Packages |
 ------------- |
