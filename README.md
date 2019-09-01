@@ -3,6 +3,7 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/utilities?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Ubuntu](https://img.shields.io/badge/ubuntu-18.04-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
+[![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 
 Packages |
 ------------- |
@@ -25,7 +26,7 @@ maldet
 clamav
 clamdscan
 
-# Updates
+## Updates
 [![Code Size](https://img.shields.io/github/languages/code-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
 [![Repository Size](https://img.shields.io/github/repo-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
 [![Watches](https://img.shields.io/github/watchers/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
@@ -35,7 +36,7 @@ clamdscan
 * Auto built weekly on Sundays (America/Los_Angeles)
 * Rolling release updates
 
-# Usage
+## Usage
 Password generator
 ```
 docker run -it --rm demyx/utilities sh -c "pwgen -cns 50 1"
