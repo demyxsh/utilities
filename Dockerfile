@@ -25,9 +25,8 @@ RUN set -ex; \
     nano \
 	clamav \
 	clamdscan \
-	net-tools
-
-RUN apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+	net-tools; \
+	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
 	rm -rf /var/lib/apt/lists/*
 
 RUN set -ex; \
