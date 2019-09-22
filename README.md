@@ -26,7 +26,7 @@ maldet
 clamav
 clamdscan
 
-## Updates
+## Updates & Support
 [![Code Size](https://img.shields.io/github/languages/code-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
 [![Repository Size](https://img.shields.io/github/repo-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
 [![Watches](https://img.shields.io/github/watchers/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
@@ -35,6 +35,7 @@ clamdscan
 
 * Auto built weekly on Sundays (America/Los_Angeles)
 * Rolling release updates
+* For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
 
 ## Usage
 Password generator
