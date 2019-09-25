@@ -1,6 +1,6 @@
 #!/bin/bash
-
-# Borrowed code
+# Demyx
+# https://demyx.sh
 # https://github.com/gdbtek/linux-cookbooks/blob/master/libraries/util.bash
 
 printTable() {

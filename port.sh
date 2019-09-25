@@ -1,4 +1,6 @@
 #!/bin/bash
+# Demyx
+# https://demyx.sh
 
 while true; do
 DEMYX_SFTP_OPEN_PORT=$(netstat -tupln 2>/dev/null | grep :"$DEMYX_SFTP_PORT" || true)

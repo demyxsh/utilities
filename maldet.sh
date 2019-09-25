@@ -1,4 +1,6 @@
 #!/bin/bash
+# Demyx
+# https://demyx.sh
 
 DEMYX_MALDET_TYPE="$1"
 
