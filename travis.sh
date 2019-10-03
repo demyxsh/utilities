@@ -8,12 +8,8 @@ IFS=$'\n\t'
 # Get versions
 DEMYX_UBUNTU_VERSION=$(docker exec -t ubuntu cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's/"//g' | sed -e 's/\r//g')
 
-# Replace the README.md
-[[ -f README.md ]] && rm README.md
-cp .readme README.md
-
-# Replace latest with actual versions
-sed -i "s/ubuntu-latest-informational/ubuntu-${DEMYX_UBUNTU_VERSION}-informational/g" README.md
+# Replace versions
+sed -i "s|ubuntu-.*.-informational|ubuntu-${DEMYX_UBUNTU_VERSION}-informational|g" README.md
 
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"
