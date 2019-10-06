@@ -3,7 +3,7 @@ FROM ubuntu
 LABEL sh.demyx.image demyx/utilities
 LABEL sh.demyx.maintainer Demyx <info@demyx.sh>
 LABEL sh.demyx.url https://demyx.sh
-LABEL sh.demyx.github https://github.com/demyxco/demyx
+LABEL sh.demyx.github https://github.com/demyxco
 LABEL sh.demyx.registry https://hub.docker.com/u/demyx
 
 RUN set -ex; \
