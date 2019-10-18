@@ -46,7 +46,7 @@ printTable() {
 
                 # Add Line Delimiter
 
-                if [[ "${i}" -eq '1' ]] || [[ "${numberOfLines}" -gt '1' && "${i}" -eq "${numberOfLines}" ]]
+                if [[ "${i}" -eq '1' || "${numberOfLines}" -gt '1' && "${i}" -eq "${numberOfLines}" ]]
                 then
                     table="${table}$(printf '%s#+' "$(repeatString '#+' "${numberOfColumns}")")"
                 fi
