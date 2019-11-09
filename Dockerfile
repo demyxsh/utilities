@@ -6,6 +6,7 @@ LABEL sh.demyx.url https://demyx.sh
 LABEL sh.demyx.github https://github.com/demyxco
 LABEL sh.demyx.registry https://hub.docker.com/u/demyx
 
+# Install custom packages
 RUN set -ex; \
     apt-get update && apt-get install -y --no-install-recommends \
     bash \
@@ -29,6 +30,7 @@ RUN set -ex; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*
 
+# Install and configure maldet
 RUN set -ex; \
     cd /tmp; \
     curl -O http://www.rfxn.com/downloads/maldetect-current.tar.gz; \
@@ -40,8 +42,11 @@ RUN set -ex; \
     freshclam; \
     maldet -u; \
     rm -rf /tmp/*
-    
-RUN mkdir /demyx
+
+# Create demyx user
+RUN set -ex; \
+    groupadd --gid 1000 demyx; \
+    useradd --uid 1000 --gid demyx demyx
 
 COPY table.sh /usr/local/bin/demyx-table
 COPY proxy.sh /usr/local/bin/demyx-proxy
