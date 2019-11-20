@@ -48,14 +48,18 @@ RUN set -ex; \
     groupadd --gid 1000 demyx; \
     useradd --uid 1000 --gid demyx demyx
 
+# Copy files
 COPY table.sh /usr/local/bin/demyx-table
 COPY proxy.sh /usr/local/bin/demyx-proxy
 COPY maldet.sh /usr/local/bin/demyx-maldet
 COPY port.sh /usr/local/bin/demyx-port
 
+# Finalize
 RUN chmod +x /usr/local/bin/demyx-table; \
     chmod +x /usr/local/bin/demyx-proxy; \
     chmod +x /usr/local/bin/demyx-maldet; \
     chmod +x /usr/local/bin/demyx-port
+
+USER demyx
 
 ENTRYPOINT ["dumb-init", "bash", "-c"]
