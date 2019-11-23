@@ -49,16 +49,18 @@ RUN set -ex; \
     useradd --uid 1000 --gid demyx demyx
 
 # Copy files
-COPY table.sh /usr/local/bin/demyx-table
-COPY proxy.sh /usr/local/bin/demyx-proxy
-COPY maldet.sh /usr/local/bin/demyx-maldet
-COPY port.sh /usr/local/bin/demyx-port
+COPY bin/chroot.sh /usr/bin/demyx-chroot
+COPY bin/maldet.sh /usr/bin/demyx-maldet
+COPY bin/port.sh /usr/bin/demyx-port
+COPY bin/proxy.sh /usr/bin/demyx-proxy
+COPY bin/table.sh /usr/bin/demyx-table
 
 # Finalize
-RUN chmod +x /usr/local/bin/demyx-table; \
-    chmod +x /usr/local/bin/demyx-proxy; \
-    chmod +x /usr/local/bin/demyx-maldet; \
-    chmod +x /usr/local/bin/demyx-port
+RUN set -ex ; \
+    chmod +x /usr/bin/demyx-chroot; \
+    chmod +x /usr/bin/demyx-port; \
+    chmod +x /usr/bin/demyx-proxy; \
+    chmod +x /usr/bin/demyx-table
 
 USER demyx
 
