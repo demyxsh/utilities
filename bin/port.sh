@@ -3,12 +3,11 @@
 # https://demyx.sh
 
 while true; do
-DEMYX_SFTP_OPEN_PORT=$(netstat -tupln 2>/dev/null | grep :"$DEMYX_SFTP_PORT" || true)
-    if [[ -z "$DEMYX_SFTP_OPEN_PORT" ]]; then
+DEMYX_UTILITIES_PORT_CHECK=$(netstat -tupln 2>/dev/null | grep :"$DEMYX_UTILITIES_PORT" || true)
+    if [[ -z "$DEMYX_UTILITIES_PORT_CHECK" ]]; then
         break
     else
-        DEMYX_SFTP_PORT="$((DEMYX_SFTP_PORT+1))"
+        DEMYX_UTILITIES_PORT="$((DEMYX_UTILITIES_PORT+1))"
     fi
 done
-
-echo "$DEMYX_SFTP_PORT"
+echo "$DEMYX_UTILITIES_PORT"
