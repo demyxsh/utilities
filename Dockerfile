@@ -58,6 +58,7 @@ COPY bin/table.sh /usr/bin/demyx-table
 # Finalize
 RUN set -ex ; \
     chmod +x /usr/bin/demyx-chroot; \
+    chmod +x /usr/bin/demyx-maldet; \
     chmod +x /usr/bin/demyx-port; \
     chmod +x /usr/bin/demyx-proxy; \
     chmod +x /usr/bin/demyx-table
