@@ -6,10 +6,10 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Get versions
-DEMYX_UBUNTU_VERSION=$(docker exec -t ubuntu cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's/"//g' | sed -e 's/\r//g')
+DEMYX_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's|"||g' | sed -e 's/\r//g')
 
 # Replace versions
-sed -i "s|ubuntu-.*.-informational|ubuntu-${DEMYX_UBUNTU_VERSION}-informational|g" README.md
+sed -i "s|debian-.*.-informational|debian-${DEMYX_UBUNTU_VERSION}-informational|g" README.md
 
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"

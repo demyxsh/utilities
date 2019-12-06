@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM debian
 
 LABEL sh.demyx.image demyx/utilities
 LABEL sh.demyx.maintainer Demyx <info@demyx.sh>
@@ -22,7 +22,6 @@ RUN set -ex; \
     bsdmainutils \
     less \
     apache2-utils \
-    dumb-init \
     nano \
     clamav \
     clamdscan \
@@ -64,5 +63,3 @@ RUN set -ex ; \
     chmod +x /usr/bin/demyx-table
 
 USER demyx
-
-ENTRYPOINT ["dumb-init", "bash", "-c"]

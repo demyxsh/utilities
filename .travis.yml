@@ -17,8 +17,8 @@ before_install:
 
 script:
   - docker build --no-cache -t demyx/"$DEMYX_REPOSITORY" .
-  - docker run -dit --rm --name ubuntu demyx/utilities top
-  - docker exec -t ubuntu cat /etc/os-release
+  - docker run -dit --rm --name="$DEMYX_REPOSITORY" demyx/"$DEMYX_REPOSITORY" top
+  - docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release
 
 after_success:
   - echo "$DEMYX_PASSWORD" | docker login -u "$DEMYX_USERNAME" --password-stdin

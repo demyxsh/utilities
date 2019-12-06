@@ -2,7 +2,7 @@
 [![Build Status](https://img.shields.io/travis/demyxco/utilities?style=flat)](https://travis-ci.org/demyxco/utilities)
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/utilities?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
-[![Ubuntu](https://img.shields.io/badge/ubuntu-18.04-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
+[![Debian](https://img.shields.io/badge/debian-18.04-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 
 Packages |
@@ -26,17 +26,6 @@ maldet
 clamav
 clamdscan
 
-## Updates & Support
-[![Code Size](https://img.shields.io/github/languages/code-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
-[![Repository Size](https://img.shields.io/github/repo-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
-[![Watches](https://img.shields.io/github/watchers/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
-[![Stars](https://img.shields.io/github/stars/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
-[![Forks](https://img.shields.io/github/forks/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
-
-* Auto built weekly on Sundays (America/Los_Angeles)
-* Rolling release updates
-* For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
-
 ## Usage
 Password generator
 ```
@@ -53,3 +42,14 @@ Pronounceable-ish username generator for WordPress auto deployment
 docker run -it --rm demyx/utilities sh -c "gpw 1 20"
 # Output: tionsuistsmonplownse
 ```
+
+## Updates & Support
+[![Code Size](https://img.shields.io/github/languages/code-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
+[![Repository Size](https://img.shields.io/github/repo-size/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
+[![Watches](https://img.shields.io/github/watchers/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
+[![Stars](https://img.shields.io/github/stars/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
+[![Forks](https://img.shields.io/github/forks/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
+
+* Auto built weekly on Sundays (America/Los_Angeles)
+* Rolling release updates
+* For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
