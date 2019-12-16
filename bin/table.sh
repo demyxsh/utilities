@@ -2,6 +2,7 @@
 # Demyx
 # https://demyx.sh
 # https://github.com/gdbtek/linux-cookbooks/blob/master/libraries/util.bash
+set -euo pipefail
 
 printTable() {
     local -r delimiter="${1}"

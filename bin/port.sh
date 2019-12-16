@@ -1,6 +1,9 @@
 #!/bin/bash
 # Demyx
 # https://demyx.sh
+set -euo pipefail
+
+DEMYX_UTILITIES_PORT="${DEMYX_UTILITIES_PORT:-2222}"
 
 while true; do
 DEMYX_UTILITIES_PORT_CHECK=$(netstat -tupln 2>/dev/null | grep :"$DEMYX_UTILITIES_PORT" || true)
