@@ -9,7 +9,7 @@ IFS=$'\n\t'
 DEMYX_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's|"||g' | sed -e 's/\r//g')
 
 # Replace versions
-sed -i "s|debian-.*.-informational|debian-${DEMYX_UBUNTU_VERSION}-informational|g" README.md
+sed -i "s|debian-.*.-informational|debian-${DEMYX_DEBIAN_VERSION}-informational|g" README.md
 
 # Echo version to file
 echo "DEMYX_DEBIAN_VERSION=$DEMYX_DEBIAN_VERSION" > VERSION
