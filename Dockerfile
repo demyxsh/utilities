@@ -59,8 +59,8 @@ RUN set -ex; \
     maldet -u; \
     rm -rf /tmp/*
 
-# Copy files
-COPY bin "$UTILITIES_CONFIG"
+# Copy source
+COPY --chown=demyx:demyx src "$UTILITIES_CONFIG"
 
 # Finalize
 RUN set -ex ; \
