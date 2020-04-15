@@ -11,6 +11,9 @@ DEMYX_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release | 
 # Replace versions
 sed -i "s|debian-.*.-informational|debian-${DEMYX_UBUNTU_VERSION}-informational|g" README.md
 
+# Echo version to file
+echo "DEMYX_DEBIAN_VERSION=$DEMYX_DEBIAN_VERSION" > VERSION
+
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"
 git config --global user.name "Travis CI"
