@@ -64,19 +64,27 @@ COPY --chown=demyx:demyx src "$UTILITIES_CONFIG"
 
 # Finalize
 RUN set -ex ; \
+    # demyx-chroot
+    chmod +x "$UTILITIES_CONFIG"/chroot.sh; \
     mv "$UTILITIES_CONFIG"/chroot.sh /usr/bin/demyx-chroot; \
-    chmod +x /usr/bin/demyx-chroot; \
     \
+    # demyx-maldet
+    chmod +x "$UTILITIES_CONFIG"/maldet.sh; \
     mv "$UTILITIES_CONFIG"/maldet.sh /usr/bin/demyx-maldet; \
-    chmod +x /usr/bin/demyx-maldet; \
     \
+    # demyx-port
+    chmod +x "$UTILITIES_CONFIG"/port.sh; \
     mv "$UTILITIES_CONFIG"/port.sh /usr/bin/demyx-port; \
-    chmod +x /usr/bin/demyx-port; \
     \
+    # demyx-proxy
+    chmod +x "$UTILITIES_CONFIG"/proxy.sh; \
     mv "$UTILITIES_CONFIG"/proxy.sh /usr/bin/demyx-proxy; \
-    chmod +x /usr/bin/demyx-proxy; \
     \
+    # demyx-table
+    chmod +x "$UTILITIES_CONFIG"/table.sh; \
     mv "$UTILITIES_CONFIG"/table.sh /usr/bin/demyx-table; \
-    chmod +x /usr/bin/demyx-table
+    \
+    # Reset permissions
+    chown -R root:root /usr/local/bin
 
 USER demyx
