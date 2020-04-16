@@ -6,14 +6,13 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Get versions
-DEMYX_UTILITIES_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's|"||g' | sed -e 's/\r//g')
+DEMYX_UTILITIES_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/debian_version | sed -e 's/\r//g')
 
 # Replace versions
 sed -i "s|debian-.*.-informational|debian-${DEMYX_UTILITIES_DEBIAN_VERSION}-informational|g" README.md
 
 # Echo version to file
-echo "DEMYX_UTILITIES_DEBIAN_VERSION=$DEMYX_UTILITIES_DEBIAN_VERSION
-DEMYX_UTILITIES_VERSION=$(date +%Y-%m-%d)" > VERSION
+echo "DEMYX_UTILITIES_DEBIAN_VERSION=$DEMYX_UTILITIES_DEBIAN_VERSION" > VERSION
 
 # Push back to GitHub
 git config --global user.email "travis@travis-ci.org"
