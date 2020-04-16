@@ -6,13 +6,13 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # Get versions
-DEMYX_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's|"||g' | sed -e 's/\r//g')
+DEMYX_UTILITIES_DEBIAN_VERSION=$(docker exec -t "$DEMYX_REPOSITORY" cat /etc/os-release | grep VERSION_ID | cut -c 12- | sed 's|"||g' | sed -e 's/\r//g')
 
 # Replace versions
-sed -i "s|debian-.*.-informational|debian-${DEMYX_DEBIAN_VERSION}-informational|g" README.md
+sed -i "s|debian-.*.-informational|debian-${DEMYX_UTILITIES_DEBIAN_VERSION}-informational|g" README.md
 
 # Echo version to file
-echo "DEMYX_DEBIAN_VERSION=$DEMYX_DEBIAN_VERSION
+echo "DEMYX_UTILITIES_DEBIAN_VERSION=$DEMYX_UTILITIES_DEBIAN_VERSION
 DEMYX_UTILITIES_VERSION=$(date +%Y-%m-%d)" > VERSION
 
 # Push back to GitHub
@@ -21,7 +21,7 @@ git config --global user.name "Travis CI"
 git remote set-url origin https://${DEMYX_GITHUB_TOKEN}@github.com/demyxco/"$DEMYX_REPOSITORY".git
 # Commit VERSION first
 git add VERSION
-git commit -m "DEBIAN $DEMYX_DEBIAN_VERSION"
+git commit -m "DEBIAN $DEMYX_UTILITIES_DEBIAN_VERSION"
 git push origin HEAD:master
 # Commit the rest
 git add .
