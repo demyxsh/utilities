@@ -51,6 +51,6 @@ docker run -it --rm demyx/utilities sh -c "gpw 1 20"
 [![Stars](https://img.shields.io/github/stars/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
 [![Forks](https://img.shields.io/github/forks/demyxco/utilities?style=flat&color=blue)](https://github.com/demyxco/utilities)
 
-* Auto built weekly on Sundays (America/Los_Angeles)
+* Auto built weekly on Saturdays (America/Los_Angeles)
 * Rolling release updates
 * For support: [#demyx](https://webchat.freenode.net/?channel=#demyx)
