@@ -2,7 +2,7 @@
 [![Build Status](https://img.shields.io/travis/demyxco/utilities?style=flat)](https://travis-ci.org/demyxco/utilities)
 [![Docker Pulls](https://img.shields.io/docker/pulls/demyx/utilities?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Architecture](https://img.shields.io/badge/linux-amd64-important?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
-[![Debian](https://img.shields.io/badge/debian-10.7-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
+[![Debian](https://img.shields.io/badge/debian-10.8-informational?style=flat&color=blue)](https://hub.docker.com/r/demyx/utilities)
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 [![Become a Patron!](https://img.shields.io/badge/become%20a%20patron-$5-informational?style=flat&color=blue)](https://www.patreon.com/bePatron?u=23406156)
 
