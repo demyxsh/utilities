@@ -1,0 +1,8 @@
+#!/bin/bash
+# Demyx
+# https://demyx.sh
+set -euo pipefail
+
+DEMYX_MALDET_SCAN="$(maldet -a "$DEMYX" | grep "to view run" | awk '{print $NF}')"
+
+maldet --report "$DEMYX_MALDET_SCAN"
