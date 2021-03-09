@@ -7,20 +7,16 @@ LABEL sh.demyx.github       https://github.com/demyxco
 LABEL sh.demyx.registry     https://hub.docker.com/u/demyx
 
 # Set default variables
-ENV UTILITIES_ROOT      /demyx
-ENV UTILITIES_CONFIG    /etc/demyx
-ENV UTILITIES_LOG       /var/log/demyx
-ENV TZ                  America/Los_Angeles
+ENV DEMYX                   /demyx
+ENV DEMYX_CONFIG            /etc/demyx
+ENV DEMYX_LOG               /var/log/demyx
+ENV TZ                      America/Los_Angeles
+# Set default variables
+ENV UTILITIES_CONFIG        "$DEMYX_CONFIG"
+ENV UTILITIES_LOG           "$DEMYX_LOG"
+ENV UTILITIES_ROOT          "$DEMYX"
 
-# Configure Demyx
-RUN set -ex; \
-    adduser --gecos '' --disabled-password demyx; \
-    \
-    install -d -m 0755 -o demyx -g demyx "$UTILITIES_ROOT"; \
-    install -d -m 0755 -o demyx -g demyx "$UTILITIES_CONFIG"; \
-    install -d -m 0755 -o demyx -g demyx "$UTILITIES_LOG"
-
-# Install custom packages
+# Packages
 RUN set -ex; \
     apt-get update && apt-get install -y --no-install-recommends \
     apache2-utils \
@@ -39,12 +35,27 @@ RUN set -ex; \
     net-tools \
     pv \
     pwgen \
+    rsync \
     tzdata \
     uuid-runtime; \
     \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     \
     rm -rf /var/lib/apt/lists/*
+
+# Configure Demyx
+RUN set -ex; \
+    # Create demyx user
+    adduser --gecos '' --disabled-password demyx; \
+    \
+    # Create demyx directories
+    install -d -m 0755 -o demyx -g demyx "$DEMYX"; \
+    install -d -m 0755 -o demyx -g demyx "$DEMYX_CONFIG"; \
+    install -d -m 0755 -o demyx -g demyx "$DEMYX_LOG"; \
+    \
+    # Update .bashrc
+    echo 'PS1="$(whoami)@\h:\w \$ "' > /home/demyx/.bashrc; \
+    echo 'PS1="$(whoami)@\h:\w \$ "' > /root/.bashrc
 
 # Install and configure maldet
 RUN set -ex; \
@@ -59,32 +70,12 @@ RUN set -ex; \
     maldet -u; \
     rm -rf /tmp/*
 
-# Copy source
-COPY --chown=demyx:demyx src "$UTILITIES_CONFIG"
+# Imports
+COPY --chown=root:root bin /usr/local/bin
 
 # Finalize
 RUN set -ex ; \
-    # demyx-chroot
-    chmod +x "$UTILITIES_CONFIG"/chroot.sh; \
-    mv "$UTILITIES_CONFIG"/chroot.sh /usr/bin/demyx-chroot; \
-    \
-    # demyx-maldet
-    chmod +x "$UTILITIES_CONFIG"/maldet.sh; \
-    mv "$UTILITIES_CONFIG"/maldet.sh /usr/bin/demyx-maldet; \
-    \
-    # demyx-port
-    chmod +x "$UTILITIES_CONFIG"/port.sh; \
-    mv "$UTILITIES_CONFIG"/port.sh /usr/bin/demyx-port; \
-    \
-    # demyx-proxy
-    chmod +x "$UTILITIES_CONFIG"/proxy.sh; \
-    mv "$UTILITIES_CONFIG"/proxy.sh /usr/bin/demyx-proxy; \
-    \
-    # demyx-table
-    chmod +x "$UTILITIES_CONFIG"/table.sh; \
-    mv "$UTILITIES_CONFIG"/table.sh /usr/bin/demyx-table; \
-    \
-    # Reset permissions
+    # Set ownership
     chown -R root:root /usr/local/bin
 
 USER demyx
