@@ -1,4 +1,4 @@
 {
-  "debian": "",
-  "maldet": "init"
+  "debian": "10.11",
+  "maldet": "1.6.4"
 }
