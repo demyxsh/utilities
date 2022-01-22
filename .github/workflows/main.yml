@@ -40,7 +40,7 @@ jobs:
         run: |
           DEMYX_UTILITIES_DEBIAN_VERSION="$(docker exec ${{ env.DEMYX_REPOSITORY }} cat /etc/debian_version)"
           DEMYX_UTILITIES_MALDET_VERSION="$(docker exec ${{ env.DEMYX_REPOSITORY }} maldet -v | sed -n 1p | awk -F ' ' '{print $4}' | sed 's|v||g')"
-          DEMYX_JQ="$(jq ".debian = \"$DEMYX_SSH_ALPINE_VERSION\"" version.json)"
+          DEMYX_JQ="$(jq ".debian = \"$DEMYX_UTILITIES_DEBIAN_VERSION\" | .maldet = \"$DEMYX_UTILITIES_MALDET_VERSION\"" version.json)"
 
           # Update versions
           echo "$DEMYX_JQ" > version.json
