@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2022-01-22
+- Define TERM to environment [a141c65](https://github.com/demyxsh/utilities/commit/a141c6530ae6744dd7420d2a247b2f3ee14d4ab9)
+
 ## 2021-03-08
 - Added
     - `bin/demyx-chroot`
