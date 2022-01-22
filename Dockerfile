@@ -10,6 +10,7 @@ LABEL sh.demyx.registry     https://hub.docker.com/u/demyx
 ENV DEMYX                   /demyx
 ENV DEMYX_CONFIG            /etc/demyx
 ENV DEMYX_LOG               /var/log/demyx
+ENV TERM                    linux
 ENV TZ                      America/Los_Angeles
 # Set default variables
 ENV UTILITIES_CONFIG        "$DEMYX_CONFIG"
