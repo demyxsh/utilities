@@ -33,6 +33,7 @@ RUN set -ex; \
     jq \
     less \
     nano \
+    netcat \
     net-tools \
     pv \
     pwgen \
