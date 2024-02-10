@@ -12,6 +12,18 @@
 [![Buy Me A Coffee](https://img.shields.io/badge/buy_me_coffee-$5-informational?style=flat&color=blue)](https://www.buymeacoffee.com/VXqkQK5tb)
 [![Become a Patron!](https://img.shields.io/badge/become%20a%20patron-$5-informational?style=flat&color=blue)](https://www.patreon.com/bePatron?u=23406156)
 
+To properly utilize this image, please use [Demyx](https://demyx.sh/readme).
+- Repository - [demyxsh/demyx](https://github.com/demyxsh/demyx)
+- Homepage - [demyx.sh](https://demyx.sh)
+
+[![Demyx Discord](https://discordapp.com/api/guilds/1152828583446859818/widget.png?style=banner2)](https://demyx.sh/discord)
+
+Join us on Discord for latest news, faster support, or just chill.
+
+<a href="https://demyx.sh/sponsor-buymeacoffee" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+Support this project by buying coffee (please).
+
 Packages |
 ------------- |
 bash
@@ -57,6 +69,6 @@ docker run -it --rm demyx/utilities sh -c "gpw 1 20"
 ```
 
 ## Updates & Support
-* Auto built weekly on Saturdays (America/Los_Angeles)
-* Rolling release updates
-* For support: [#demyx](https://web.libera.chat/?channel=#demyx)
+- Auto built weekly on Saturdays (America/Los_Angeles)
+- Rolling release updates
+- For support: [Discord](https://demyx.sh/discord)
