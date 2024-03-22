@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2024-03-21
+- Fix logic for port checking [2d92622](https://github.com/demyxsh/utilities/commit/2d92622494ea0db839318ceb99258fa5e400324b)
+
 ## 2024-01-18
 - Add key to manually trigger workflow [cfcbb69](https://github.com/demyxsh/utilities/commit/cfcbb69e32190d910553fd3c481f576bf60a59af)
 
