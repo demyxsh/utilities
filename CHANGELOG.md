@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2025-07-28
+- Update commit message format in GitHub Actions workflow to include run ID [705d018](https://github.com/demyxsh/utilities/commit/705d018c97f0f27d08e640432bffcf15c939cbec)
+
 ## 2024-03-21
 - Fix logic for port checking [2d92622](https://github.com/demyxsh/utilities/commit/2d92622494ea0db839318ceb99258fa5e400324b)
 
