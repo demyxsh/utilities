@@ -1,4 +1,4 @@
-FROM debian:bullseye-slim
+FROM debian:stable-slim
 
 LABEL sh.demyx.image        demyx/utilities
 LABEL sh.demyx.maintainer   Demyx <info@demyx.sh>
@@ -33,7 +33,7 @@ RUN set -ex; \
     jq \
     less \
     nano \
-    netcat \
+    netcat-openbsd \
     net-tools \
     pv \
     pwgen \
@@ -62,10 +62,10 @@ RUN set -ex; \
 # Install and configure maldet
 RUN set -ex; \
     cd /tmp; \
-    curl -O http://www.rfxn.com/downloads/maldetect-current.tar.gz; \
+    curl -fL --retry 5 --retry-delay 2 --retry-connrefused -o maldetect-current.tar.gz https://www.rfxn.com/downloads/maldetect-current.tar.gz; \
     tar -xzf maldetect-current.tar.gz; \
-    rm maldetect-current.tar.gz; \
-    cd $(ls /tmp); \
+    rm -f maldetect-current.tar.gz; \
+    cd "$(find /tmp -maxdepth 1 -type d -name 'maldetect-*' | head -n 1)"; \
     bash install.sh; \
     sed -i 's/scan_ignore_root="1"/scan_ignore_root="0"/g' /usr/local/maldetect/conf.maldet; \
     freshclam; \

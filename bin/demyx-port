@@ -6,12 +6,12 @@ set -euo pipefail
 DEMYX_UTILITIES_PORT="${DEMYX_UTILITIES_PORT:-2222}"
 
 while true; do
-    DEMYX_UTILITIES_PORT_CHECK="$(nc -vz localhost 2>&1 "$DEMYX_UTILITIES_PORT" || true)"
-
-    if [[ "$DEMYX_UTILITIES_PORT_CHECK" == *"failed"* ]]; then
-        break
-    else
+    if nc -vz localhost "$DEMYX_UTILITIES_PORT" >/dev/null 2>&1; then
+        # Port is in use, try the next one
         DEMYX_UTILITIES_PORT="$((DEMYX_UTILITIES_PORT+1))"
+    else
+        # nc could not connect, treat this as a free port
+        break
     fi
 done
 

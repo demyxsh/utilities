@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## 2026-05-08
+- Fix maldet Docker build step by switching download to HTTPS and adding curl fail/retry flags to prevent incomplete tar extraction
+
 ## 2025-07-28
 - Update commit message format in GitHub Actions workflow to include run ID [705d018](https://github.com/demyxsh/utilities/commit/705d018c97f0f27d08e640432bffcf15c939cbec)
 
