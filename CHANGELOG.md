@@ -1,48 +1,132 @@
-# CHANGELOG
+# Changelog
 
 ## 2026-05-08
-- Fix maldet Docker build step by switching download to HTTPS and adding curl fail/retry flags to prevent incomplete tar extraction
+### Added
+- None.
+### Changed
+- Fixed maldet Docker build step by switching download to HTTPS.
+- Added `curl` fail/retry flags to prevent incomplete tar extraction.
+- Scheduled build run.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
 
 ## 2025-07-28
-- Update commit message format in GitHub Actions workflow to include run ID [705d018](https://github.com/demyxsh/utilities/commit/705d018c97f0f27d08e640432bffcf15c939cbec)
+### Added
+- None.
+### Changed
+- Updated GitHub Actions workflow commit message format to include run ID.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
 
 ## 2024-03-21
-- Fix logic for port checking [2d92622](https://github.com/demyxsh/utilities/commit/2d92622494ea0db839318ceb99258fa5e400324b)
+### Added
+- None.
+### Changed
+- None.
+### Fixed
+- Fixed logic for port checking.
+### Removed
+- None.
+### Security
+- None.
+
+## 2024-02-09
+### Added
+- None.
+### Changed
+- Updated description with support/project links.
+- Upgraded base to Bullseye.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
 
 ## 2024-01-18
-- Add key to manually trigger workflow [cfcbb69](https://github.com/demyxsh/utilities/commit/cfcbb69e32190d910553fd3c481f576bf60a59af)
+### Added
+- Added key to manually trigger workflow.
+### Changed
+- None.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
+
+## 2023-08-20
+### Added
+- None.
+### Changed
+- Switched to netcat for open-port checks.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
 
 ## 2022-01-22
-- Define TERM to environment [a141c65](https://github.com/demyxsh/utilities/commit/a141c6530ae6744dd7420d2a247b2f3ee14d4ab9)
+### Added
+- None.
+### Changed
+- Defined `TERM` in environment.
+- Migrated to GitHub Actions.
+- Updated `jq` command.
+- Passed `-t` flag.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
 
 ## 2021-03-08
-- Added
-    - `bin/demyx-chroot`
-    - `bin/demyx-maldet`
-    - `bin/demyx-port`
-    - `bin/demyx-proxy`
-    - `bin/demyx-table`
-- Changed
-    - Renamed src to bin.
-    - Renamed chroot.sh to demyx-chroot.
-    - Renamed maldet.sh to demyx-maldet.
-    - Renamed port.sh to demyx-port.
-    - Renamed proxy.sh to demyx-proxy.
-    - Renamed table.sh to demyx-table.
-    - `bin/demyx-maldet`
-        - Remove if statement since all demyx containers uses the same structure.
-        - Update variable.
-    - `Dockerfile`
-        - Update core variables with support for old ones.
-        - Rearrange RUN commands.
-        - Update bash PS1.
-        - Update COPY directory.
-        - Update finalize RUN command.
-- Removed
+### Added
+- Added `bin/demyx-chroot`.
+- Added `bin/demyx-maldet`.
+- Added `bin/demyx-port`.
+- Added `bin/demyx-proxy`.
+- Added `bin/demyx-table`.
+### Changed
+- Renamed `src` to `bin`.
+- Renamed `chroot.sh` to `demyx-chroot`.
+- Renamed `maldet.sh` to `demyx-maldet`.
+- Renamed `port.sh` to `demyx-port`.
+- Renamed `proxy.sh` to `demyx-proxy`.
+- Renamed `table.sh` to `demyx-table`.
+- Removed conditional check in `bin/demyx-maldet` due to unified container structure.
+- Updated `bin/demyx-maldet` variable handling.
+- Updated Dockerfile core variables with backward compatibility.
+- Rearranged Dockerfile `RUN` commands.
+- Updated bash `PS1`.
+- Updated Dockerfile `COPY` directory.
+- Updated final Dockerfile `RUN` command.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
 
 ## 2020-04-14
 ### Added
-- Created src directory for main file(s)
+- Created `src` directory for main files.
 ### Changed
-- Format LABEL and ENV entries
-- Update finalize RUN commands
+- Formatted `LABEL` and `ENV` entries.
+- Updated final `RUN` commands.
+### Fixed
+- None.
+### Removed
+- None.
+### Security
+- None.
